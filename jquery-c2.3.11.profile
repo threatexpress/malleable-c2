@@ -123,7 +123,7 @@ https-certificate {
 ##    - A binary that executes without the UAC
 ##    - 64 bit for x64
 ##    - 32 bit for x86
-set spawnto_x86 "%windir%\\syswow64\\SyncAppvPublishingServer.exe";
+set spawnto_x86 "%windir%\\syswow64\\netbtugc.exe";
 set spawnto_x64 "%windir%\\sysnative\\SyncAppvPublishingServer.exe";
 
 ################################################
