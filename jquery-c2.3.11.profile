@@ -38,6 +38,8 @@
 ##    The name of this profile (used in the Indicators of Compromise report)
 ## Defaults:
 ##    sample_name: My Profile
+## Guidelines:
+##    - Choose a name that you want in a report
 set sample_name "jQuery Profile";
 
 ################################################
