@@ -71,7 +71,7 @@ set jitter    "37";            # % jitter
 ## Defaults:
 ##    useragent: Internet Explorer (Random)
 ## Guidelines
-##    - Use a User-Agent valuse that fits with your engagement
+##    - Use a User-Agent values that fits with your engagement
 #set useragent "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 7.0; InfoPath.3; .NET CLR 3.1.40767; Trident/6.0; en-IN)"; # IE 10
 set useragent "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko"; # MS IE 11 User Agent
 #set useragent "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
@@ -123,8 +123,8 @@ https-certificate {
 ##    - A binary that executes without the UAC
 ##    - 64 bit for x64
 ##    - 32 bit for x86
-set spawnto_x86 "%windir%\\syswow64\\netbtugc.exe";
-set spawnto_x64 "%windir%\\sysnative\\SyncAppvPublishingServer.exe";
+set spawnto_x86 "%windir%\\syswow64\\w32tm.exe";
+set spawnto_x64 "%windir%\\sysnative\\w32tm.exe";
 
 ################################################
 ## SMB beacons
