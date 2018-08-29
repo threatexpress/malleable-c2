@@ -117,6 +117,10 @@ https-certificate {
 ##    spawnto_x86: 	%windir%\syswow64\rundll32.exe
 ##    spawnto_x64: 	%windir%\sysnative\rundll32.exe
 ## Guidelines
+##    - OPSEC WARNING!!!! The spawnto in this example will contain identifiable command line strings
+##      - sysnative for x64 and syswow64 for x86
+##      - Example x64 : C:\WINDOWS\sysnative\svchost.exe
+##        Example x86 : C:\WINDOWS\syswow64\svchost.exe
 ##    - The binary doesnt do anything wierd (protected binary, etc)
 ##    - !! Don't use these !! 
 ##    -   "csrss.exe","logoff.exe","rdpinit.exe","bootim.exe","smss.exe","userinit.exe","sppsvc.exe"
@@ -138,8 +142,10 @@ set spawnto_x64 "%windir%\\sysnative\\w32tm.exe";
 ##    - Do not use an existing namedpipe, Beacon doesn't check for conflict!
 ##    - the ## is replace with a number unique to a teamserver     
 ## ---------------------
-set pipename        "wkssvc_##";
-set pipename_stager "spoolss_##";
+#set pipename        "wkssvc_##";
+#set pipename_stager "spoolss_##";
+set pipename        "mojo.5688.8052.183894939787088877##"; # Common Chrome named pipe
+set pipename        "mojo.5688.8052.35780273329370473##"; # Common Chrome named pipe
 
 ################################################
 ## DNS beacons
