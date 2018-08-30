@@ -74,12 +74,6 @@ set jitter    "37";            # % jitter
 ##    - Use a User-Agent values that fits with your engagement
 #set useragent "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 7.0; InfoPath.3; .NET CLR 3.1.40767; Trident/6.0; en-IN)"; # IE 10
 set useragent "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko"; # MS IE 11 User Agent
-#set useragent "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36";
-#set useragent "Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko";
-#set useragent "Mozilla/5.0 (Windows NT 6.1; rv:29.0) Gecko/20100101 Firefox/29.0";
-#set useragent "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/6.0)";
-#set useragent "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko";
-#set useragent "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)";
 
 ################################################
 ## SSL CERTIFICATE
@@ -140,12 +134,12 @@ set spawnto_x64 "%windir%\\sysnative\\w32tm.exe";
 ##    pipename_stager: status_##
 ## Guidelines:
 ##    - Do not use an existing namedpipe, Beacon doesn't check for conflict!
-##    - the ## is replace with a number unique to a teamserver     
+##    - the ## is replaced with a number unique to a teamserver     
 ## ---------------------
 #set pipename        "wkssvc_##";
 #set pipename_stager "spoolss_##";
-set pipename        "mojo.5688.8052.183894939787088877##"; # Common Chrome named pipe
-set pipename        "mojo.5688.8052.35780273329370473##"; # Common Chrome named pipe
+set pipename         "mojo.5688.8052.183894939787088877##"; # Common Chrome named pipe
+set pipename_stager  "mojo.5688.8052.35780273329370473##"; # Common Chrome named pipe
 
 ################################################
 ## DNS beacons
