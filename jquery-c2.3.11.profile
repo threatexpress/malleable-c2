@@ -235,6 +235,7 @@ stage {
     set stomppe        "true";
     set obfuscate      "true";
     set name           "srv.dll";
+    set cleanup        "true";
 
     # Values captured using peclone agaist a Windows 10 version of explorer.exe
     set checksum       "0";
