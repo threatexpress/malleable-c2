@@ -2,7 +2,7 @@
 
 This project is intended to serve as reference when designing Cobalt Strike Malleable C2 profiles.
 
-The latest reference profile utilizes features introduced in Cobalt Strike 3.12
+The latest reference profile utilizes features introduced in Cobalt Strike 3.13
 
 **Authors:** @joevest @001SPARTaN @andrewchiles
 
