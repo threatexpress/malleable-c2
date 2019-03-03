@@ -2,9 +2,17 @@
 
 This project is intended to serve as reference when designing Cobalt Strike Malleable C2 profiles.
 
-The latest reference profile utilizes features introduced in Cobalt Strike 3.13
+## Changelog
 
-**Authors:** @joevest @001SPARTaN @andrewchiles
+- Added c2 profile for CS 3.13
+- Added default for `tcp_port`. 
+- Added `amsi_disable` parameter. Added reference for multiply URIs. 
+
+## Authors
+
+- @joevest
+- @001SPARTaN
+- @andrewchiles
 
 ## License
 
