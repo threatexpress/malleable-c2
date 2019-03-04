@@ -72,8 +72,10 @@ set jitter    "37";            # % jitter
 ##    useragent: Internet Explorer (Random)
 ## Guidelines
 ##    - Use a User-Agent values that fits with your engagement
-#set useragent "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 7.0; InfoPath.3; .NET CLR 3.1.40767; Trident/6.0; en-IN)"; # IE 10
-set useragent "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko"; # MS IE 11 User Agent
+## IE 10
+#set useragent "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 7.0; InfoPath.3; .NET CLR 3.1.40767; Trident/6.0; en-IN)";
+## MS IE 11 User Agent
+set useragent "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko";
 
 ################################################
 ## SSL CERTIFICATE
