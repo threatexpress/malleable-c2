@@ -1,6 +1,6 @@
 # Malleable C2 Profile
-# Version: CobaltStrike 3.13
-# File: jquery-c2.3.13.profile
+# Version: CobaltStrike 3.14
+# File: jquery-c2.3.14.profile
 # Description: 
 #    c2 profile attempting to mimic a jquery.js request
 #    uses signed certificates
@@ -140,8 +140,12 @@ set amsi_disable "false";
 ##    - A binary that executes without the UAC
 ##    - 64 bit for x64
 ##    - 32 bit for x86
-set spawnto_x86 "%windir%\\syswow64\\svchost.exe -k netsvcs";
-set spawnto_x64 "%windir%\\sysnative\\svchost.exe -k netsvcs";
+##    - You can add command line parameters to blend
+##      - set spawnto_x86 "%windir%\\syswow64\\svchost.exe -k netsvcs";
+##      - set spawnto_x64 "%windir%\\sysnative\\svchost.exe -k netsvcs";
+##      - Note: svchost.exe may look weird as the parent process 
+set spawnto_x86 "%windir%\\syswow64\\dllhost.exe";
+set spawnto_x64 "%windir%\\sysnative\\dllhost.exe";
 
 ################################################
 ## TCP Beacon
