@@ -11,6 +11,7 @@
 ## Tips for Profile Parameter Values
 ################################################
 
+
 ## Parameter Values
 ## Enclose parameter in Double quote, not single
 ##      set useragent "SOME AGENT";   GOOD
@@ -72,6 +73,8 @@ set jitter    "37";            # % jitter
 ##    useragent: Internet Explorer (Random)
 ## Guidelines
 ##    - Use a User-Agent values that fits with your engagement
+##    - useragent can only be 128 chars
+
 ## IE 10
 #set useragent "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 7.0; InfoPath.3; .NET CLR 3.1.40767; Trident/6.0; en-IN)";
 ## MS IE 11 User Agent
@@ -130,6 +133,7 @@ set amsi_disable "false";
 ##    spawnto_x86: 	%windir%\syswow64\rundll32.exe
 ##    spawnto_x64: 	%windir%\sysnative\rundll32.exe
 ## Guidelines
+##    - spawnto can only be 63 chars
 ##    - OPSEC WARNING!!!! The spawnto in this example will contain identifiable command line strings
 ##      - sysnative for x64 and syswow64 for x86
 ##      - Example x64 : C:\WINDOWS\sysnative\w32tm.exe
