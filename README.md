@@ -19,4 +19,4 @@ This project is intended to serve as reference when designing Cobalt Strike Mall
 This project and all individual scripts are under the GNU GPL v3.0 license.
 
 ## Links
-[ThreatExpress - A Deep Dive into Cobalt Strike Malleable C2](http://threatexpress.com/2018/09/a-deep-dive-into-cobalt-strike-malleable-c2/)
+[ThreatExpress - A Deep Dive into Cobalt Strike Malleable C2](http://threatexpress.com/blogs/2018/a-deep-dive-into-cobalt-strike-malleable-c2/)
