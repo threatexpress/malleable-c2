@@ -54,8 +54,8 @@ set sample_name "jQuery CS 4.0 Profile";
 ##    - Beacon Timing in milliseconds (1000 = 1 sec)
 set sleeptime "45000";         # 45 Seconds
 #set sleeptime "300000";       # 5 Minutes
-#set sleeptime "6000000";      # 10 Minutes
-#set sleeptime "9000000";      # 15 Minutes
+#set sleeptime "600000";      # 10 Minutes
+#set sleeptime "900000";      # 15 Minutes
 #set sleeptime "1200000";      # 20 Minutes
 #set sleeptime "1800000";      # 30 Minutes
 #set sleeptime "3600000";      # 1 Hours
@@ -218,6 +218,8 @@ set dns_stager_subhost ".feeds.123456.";
 ##    HTTP Client Headers - Basic HTTP Headers
 ## Guidelines:
 ##    - Add customize HTTP headers to the HTTP traffic of your campaign
+##    - Only specify the `Host` header when peforming domain fronting. Be aware of HTTP proxy's rewriting your request per RFC2616 Section 14.23
+##      - https://blog.cobaltstrike.com/2017/02/06/high-reputation-redirectors-and-domain-fronting/
 ##    - Note: Data transform language not supported in http stageing (mask, base64, base64url, etc)
 
 #set host_stage "false"; # Do not use staging. Must use stagles payloads
@@ -247,7 +249,7 @@ http-stager {
     client {
         header "Accept" "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
         header "Accept-Language" "en-US,en;q=0.5";
-        header "Host" "code.jquery.com";
+        #header "Host" "code.jquery.com";
         header "Referer" "http://code.jquery.com/";
         header "Accept-Encoding" "gzip, deflate";
     }
@@ -446,7 +448,7 @@ http-get {
     client {
 
         header "Accept" "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
-        header "Host" "code.jquery.com";
+        #header "Host" "code.jquery.com";
         header "Referer" "http://code.jquery.com/";
         header "Accept-Encoding" "gzip, deflate";
 
@@ -506,7 +508,7 @@ http-post {
     client {
 
         header "Accept" "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
-        header "Host" "code.jquery.com";
+        #header "Host" "code.jquery.com";
         header "Referer" "http://code.jquery.com/";
         header "Accept-Encoding" "gzip, deflate";
        
@@ -555,7 +557,7 @@ http-post {
 #     client {
 
 #         header "Accept" "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
-#         header "Host" "code.jquery.com";
+#         #header "Host" "code.jquery.com";
 #         header "Referer" "http://code.jquery.com/";
 #         header "Accept-Encoding" "gzip, deflate";
        
