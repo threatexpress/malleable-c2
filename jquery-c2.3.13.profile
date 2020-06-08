@@ -305,13 +305,13 @@ stage {
 
     # The transform-x86 and transform-x64 blocks pad and transform Beacon's Reflective DLL stage. These blocks support three commands: prepend, append, and strrep.
     transform-x86 { # transform the x86 rDLL stage
-        prepend "\x90\x90\x90\x90\x90\x90\x90\x90\x90"; # prepend null bytes
+        prepend "\x90\x90\x90\x90\x90\x90\x90\x90\x90"; # prepend nops
         strrep "ReflectiveLoader" "execute"; # Change this text
         strrep "This program cannot be run in DOS mode" ""; # Remove this text
         strrep "beacon.dll"       ""; # Remove this text
     }
     transform-x64 { # transform the x64 rDLL stage
-        prepend "\x90\x90\x90\x90\x90\x90\x90\x90\x90"; # prepend null bytes
+        prepend "\x90\x90\x90\x90\x90\x90\x90\x90\x90"; # prepend nops
         strrep "ReflectiveLoader" "execute"; # Change this text
         strrep "beacon.x64.dll"   ""; # Remove this text
     }
