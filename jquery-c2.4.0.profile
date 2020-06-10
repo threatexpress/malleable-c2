@@ -141,9 +141,9 @@ https-certificate {
 
 post-ex {
     # Optionally specify non-existent filepath to force manual specification based on the Beacon host's running processes
-    set spawnto_x86 "%windir%\\syswow64\\rundll32.exe";
+    set spawnto_x86 "%windir%\\syswow64\\dllhost.exe";
     # Hardcode paths like C:\\Windows\\System32\\dllhost.exe to avoid potential detections for %SYSNATIVE% use. !! This will break when attempting to spawn a 64bit post-ex job from a 32bit Beacon.
-    set spawnto_x64 "%windir%\\sysnative\\rundll32.exe";
+    set spawnto_x64 "%windir%\\sysnative\\dllhost.exe";
 
     # change the permissions and content of our post-ex DLLs
     set obfuscate "true";
