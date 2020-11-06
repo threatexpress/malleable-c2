@@ -6,6 +6,24 @@ Always verify your profile with `./c2lint [/path/to/my.profile]` prior to use!
 
 ## Changelog
 
+### 202011 - Add CS 4.2 Reference Profile
+
+- Add latest MalleablePE and MalleableC2 options for Cobalt Strike 4.1 and 4.2
+- 4.1 Additions: `tcp_frame_header`, `smb_frame_header`, `ssh_banner`
+- 4.2 Additions:
+  - **global**
+    - `data_jitter`
+    - `headers_remove`
+    - `ssh_pipename`
+  - **postex**
+     - `pipename`
+     - `thread_hint`
+     - `keylogger`
+  - **stage**
+    - `allocator`
+    - `magic_mz_86|magic_mz_64`
+    - `magic_pe`
+
 ### 202003 - CS 4.0 Reference Profile
 
 - Add CS4.0 reference profile of available malleable C2 options
