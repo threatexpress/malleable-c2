@@ -6,6 +6,22 @@ Always verify your profile with `./c2lint [/path/to/my.profile]` prior to use!
 
 ## Changelog
 
+### 202103 - Add CS 4.3 Reference Profile
+
+- Add latest Malleable C2 profile options for Cobalt Strike 4.3
+- Moved dns settings to new `dns-beacon` section
+- 4.3 Additions
+  - **dns-beacon**
+    - beacon
+    - get_A
+    - get_AAAA
+    - get_TXT
+    - put_metadata
+    - put_output
+    - ns_response
+  - **http-config**
+    - block_useragents
+
 ### 202011 - Add CS 4.2 Reference Profile
 
 - Add latest MalleablePE and MalleableC2 options for Cobalt Strike 4.1 and 4.2
