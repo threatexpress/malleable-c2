@@ -239,8 +239,8 @@ set ssh_pipename      "wkssvc##";
 ##      - https://blog.cobaltstrike.com/2017/02/06/high-reputation-redirectors-and-domain-fronting/
 ##    - Note: Data transform language not supported in http stageing (mask, base64, base64url, etc)
 
-set host_stage "false"; # Do not use staging. Must use stageles payloads, now the default for Cobalt Strike built-in processes
-#set host_stage "true"; # Host payload for staging over HTTP, HTTPS, or DNS. Required by stagers.set
+#set host_stage "false"; # Do not use staging. Must use stageles payloads, now the default for Cobalt Strike built-in processes
+set host_stage "true"; # Host payload for staging over HTTP, HTTPS, or DNS. Required by stagers.set
 
 http-stager {  
     set uri_x86 "/jquery-3.3.1.slim.min.js";
@@ -509,7 +509,7 @@ http-config {
     # Use this option if your teamserver is behind a redirector
     set trust_x_forwarded_for "true";
     # Block Specific User Agents with a 404 (added in 4.3)
-    set block_useragents "*virustotal*,curl*,lynx*,wget*";
+    set block_useragents "curl*,lynx*,wget*";
 }
 
 ################################################
