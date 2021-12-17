@@ -1,6 +1,6 @@
 # Malleable C2 Profile
 # Version: CobaltStrike 4.5
-# File: jquery-c2.4.3=5.profile
+# File: jquery-c2.4.5.profile
 # Description: 
 #    c2 profile attempting to mimic a jquery.js request
 #    uses signed certificates
@@ -42,7 +42,7 @@
 ##    sample_name: My Profile
 ## Guidelines:
 ##    - Choose a name that you want in a report
-set sample_name "jQuery CS 4.3 Profile";
+set sample_name "jQuery CS 4.5 Profile";
 
 ################################################
 ## Sleep Times
