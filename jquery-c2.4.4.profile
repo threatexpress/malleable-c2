@@ -42,7 +42,7 @@
 ##    sample_name: My Profile
 ## Guidelines:
 ##    - Choose a name that you want in a report
-set sample_name "jQuery CS 4.3 Profile";
+set sample_name "jQuery CS 4.4 Profile";
 
 ################################################
 ## Sleep Times
