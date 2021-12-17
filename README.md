@@ -4,7 +4,17 @@ This project is intended to serve as reference when designing Cobalt Strike Mall
 
 Always verify your profile with `./c2lint [/path/to/my.profile]` prior to use!
 
+## Malleable C2 Profile Guidance
+
+- [MalleableExplained.md](https://github.com/threatexpress/malleable-c2/blob/master/MalleableExplained.md) 
+- [ThreatExpress - A Deep Dive into Cobalt Strike Malleable C2](http://threatexpress.com/blogs/2018/a-deep-dive-into-cobalt-strike-malleable-c2/)
+
+
 ## Changelog
+
+### 202112 - Updated for CS 4.5
+- Added 4.5 reference profile
+- Updated MalleableExplained.md with 4.5 considerations
 
 ### 202108 - Added [MalleableExplained.md](https://github.com/threatexpress/malleable-c2/blob/master/MalleableExplained.md) 
 - Reference from Andy Gill (@ZephrFish)
@@ -59,6 +69,3 @@ Always verify your profile with `./c2lint [/path/to/my.profile]` prior to use!
 
 This project and all individual scripts are under the GNU GPL v3.0 license.
 
-## Links
-
-[ThreatExpress - A Deep Dive into Cobalt Strike Malleable C2](http://threatexpress.com/blogs/2018/a-deep-dive-into-cobalt-strike-malleable-c2/)

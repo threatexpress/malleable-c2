@@ -2,7 +2,26 @@ Using CS in red team operations is common practice for a lot of companies offeri
 
 One of the great and popular features of cobalt strike is the ability to create profiles  to shape and mask traffic, essentially a profile is used to tell the CS teamserver how traffic is going to look and how to respond to the data the beacon sends it.
 
-# Example Profile 
+## 4.5 Updates and Considerations
+
+### Sleepmask and UDRL Updates
+
+The sleepmask and UDRL(User Defined Reflective Loader) hooks were updated in version 4.5. If you use a custom UDRL and a custom sleepmask, there could be conflicts with profile settings if `sleepmask = true`
+
+__stage.userwx__ 
+
+This setting is a Boolean and informs the default loader to either use RWX or RX memory. At runtime beacon will either include or not include the .text section for masking. If the setting is set to TRUE, your user defined loader needs to set the protection on the .text section as RWX otherwise beacon will crash. If the setting is set to FALSE, your user defined loader should set the protection on the .text section as RX as the .text section will not be masked. 
+
+__stage.obfuscate__
+
+This setting is a Boolean and informs the default loader to either copy the header or not copy the header into memory. At runtime beacon will either include or not include the header section for masking. If the setting is set to TRUE, your user defined reflective loader should not copy the header into memory as beacon will not mask the header section. If the setting is set to FALSE, your user defined loader should copy the header into memory as beacon will mask the header section. 
+
+Depending on how sophisticated your reflective loader is you will need to make sure the settings in the Malleable C2 profile will work with how the beacon payload is loaded into memory. With the BEACON_RDLL_GENERATE and BEACON_RDLL_GENERATE_LOCAL aggressor script hooks you do have the opportunity to modify your reflective loader by using the aggressor script pe_* functions. 
+
+- https://www.cobaltstrike.com/blog/user-defined-reflective-loader-(udrl)-update-in-cobalt-strike-4.5
+- https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/malleable-c2-extend_user-defined-rdll.htm
+
+## Example Profile 
 
 The output below is an example profile broken down into the different sections and much like the documentation explains, I am going to break down what each section does and how it works both from a profile specific perspective and in use case scenarios. 
 
