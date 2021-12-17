@@ -6,7 +6,7 @@ Always verify your profile with `./c2lint [/path/to/my.profile]` prior to use!
 
 ## Changelog
 
-### 202108 - Added MalleableExplained.md 
+### 202108 - Added [MalleableExplained.md](https://github.com/threatexpress/malleable-c2/blob/master/MalleableExplained.md) 
 - Reference from Andy Gill (@ZephrFish)
 - Reference blog: https://blog.zsec.uk/cobalt-strike-profiles/
 
