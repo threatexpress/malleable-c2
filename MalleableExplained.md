@@ -2,6 +2,16 @@ Using CS in red team operations is common practice for a lot of companies offeri
 
 One of the great and popular features of cobalt strike is the ability to create profiles  to shape and mask traffic, essentially a profile is used to tell the CS teamserver how traffic is going to look and how to respond to the data the beacon sends it.
 
+## 4.6 Updates and Considerations
+
+Three new options were added that provide control to how much data (tasks and proxy) is transferred through a communication channel
+
+```
+set tasks_max_size "1048576";
+set tasks_proxy_max_size "921600";
+set tasks_dns_proxy_max_size "71680";  
+```
+
 ## 4.5 Updates and Considerations
 
 ### Sleepmask and UDRL Updates
