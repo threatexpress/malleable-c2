@@ -12,6 +12,17 @@ set tasks_proxy_max_size "921600";
 set tasks_dns_proxy_max_size "71680";  
 ```
 
+__set tasks_max_size__
+4.6 adds three new options, the first of wichi is tasks_max_size which sets the maximum size (in bytes) of task(s) and proxy data that can be transferred through a communication channel at a check in of a beacon.
+
+__set tasks_proxy_max_size__
+tasks_proxy_max_size sets the maximum size (in bytes) of proxy data to transfer via the communication channel at check in, this in conjunction with the other two options gets around the 1mb limit previously encountered within CS.
+
+__set tasks_dns_proxy_max_size__
+tasks_proxy_max_size sets  maximum size (in bytes) of proxy data to transfer via the DNS communication channel at a check in of a beacon.
+
+The `tasks_max_size`, `tasks_proxy_max_size`,and `tasks_dns_proxy_max_size` work in conjunction to create a data buffer to be transferred to beacon when a check in occurs.  This is to ensure that when a beacon checks in it requests a list of tasks and proxy data that are ready to be transferred to the beacon and any associated child processes or beacons. The data buffer starts to fill with task(s) followed by proxy data for the parent beacon. Then it continues this pattern for each child beacon until no more tasks or proxy data is available or the tasks_max_size setting will be exceeded by the next task or proxy data.
+
 ## 4.5 Updates and Considerations
 
 ### Sleepmask and UDRL Updates
