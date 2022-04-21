@@ -13,7 +13,7 @@ set tasks_dns_proxy_max_size "71680";
 ```
 
 __set tasks_max_size__
-4.6 adds three new options, the first of wichi is tasks_max_size which sets the maximum size (in bytes) of task(s) and proxy data that can be transferred through a communication channel at a check in of a beacon.
+4.6 adds three new options, the first of which is tasks_max_size which sets the maximum size (in bytes) of task(s) and proxy data that can be transferred through a communication channel at a check in of a beacon.
 
 __set tasks_proxy_max_size__
 tasks_proxy_max_size sets the maximum size (in bytes) of proxy data to transfer via the communication channel at check in, this in conjunction with the other two options gets around the 1mb limit previously encountered within CS.
