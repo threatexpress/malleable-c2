@@ -143,7 +143,7 @@ https-certificate {
 ##      it will be ignored.
 ##    - It is recommended to not modify the proxy max sizes
 ##
-set tasks_max_size "1048576";
+set tasks_max_size "2097152"; # Changed to 2 MB to support larger assembly files
 set tasks_proxy_max_size "921600";
 set tasks_dns_proxy_max_size "71680";  
 
