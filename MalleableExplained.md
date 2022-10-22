@@ -2,6 +2,27 @@ Using CS in red team operations is common practice for a lot of companies offeri
 
 One of the great and popular features of cobalt strike is the ability to create profiles  to shape and mask traffic, essentially a profile is used to tell the CS teamserver how traffic is going to look and how to respond to the data the beacon sends it.
 
+## 4.7 Updates and Considerations
+
+Cobalt Strike 4.7 adds new Malleable C2 profile options to provide flexibility around how BOFs live in memory and allows you to set a default OpenProcessToken access mask used for steal_token and bsteal_token.
+
+```
+set bof_allocator "VirtualAlloc";
+set bof_reuse_memory "true";
+set steal_token_access_mask "0";
+```
+
+__set bof_allocator__
+bof_allocator controls how you allocate memory for your BOF. Supported settings are VirtualAlloc, MapViewOfFile and HeapAlloc. Memory permissions (RWX/RX or RW/RX) are set according to the values set in the Malleable C2 profile. The exception is HeapAlloc, which is always RWX.
+
+__set bof_reuse_memory__
+bof_reuse_memory determines whether or not memory is released. If this setting is “true”, memory is cleared and then reused for the next BOF execution; if this setting is “false”, memory is released and the appropriate memory free function is used, based on the bof_allocator setting.
+
+__set steal_token_access_mask__
+steal_token_access_mask allows you to set a default OpenProcessToken access mask used for steal_token and bsteal_token. The OpenProcessToken access mask can be helpful for stealing tokens from processes using 'SYSTEM' user and you have this error: Could not open process token: {pid} (5).
+
+A full list of OpenProcessToken access mask values can be found on https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/post-exploitation_trust-relationships.htm.
+
 ## 4.6 Updates and Considerations
 
 Three new options were added that provide control to how much data (tasks and proxy) is transferred through a communication channel
@@ -19,7 +40,7 @@ __set tasks_proxy_max_size__
 tasks_proxy_max_size sets the maximum size (in bytes) of proxy data to transfer via the communication channel at check in, this in conjunction with the other two options gets around the 1mb limit previously encountered within CS.
 
 __set tasks_dns_proxy_max_size__
-tasks_proxy_max_size sets  maximum size (in bytes) of proxy data to transfer via the DNS communication channel at a check in of a beacon.
+tasks_proxy_max_size sets maximum size (in bytes) of proxy data to transfer via the DNS communication channel at a check in of a beacon.
 
 The `tasks_max_size`, `tasks_proxy_max_size`,and `tasks_dns_proxy_max_size` work in conjunction to create a data buffer to be transferred to beacon when a check in occurs.  This is to ensure that when a beacon checks in it requests a list of tasks and proxy data that are ready to be transferred to the beacon and any associated child processes or beacons. The data buffer starts to fill with task(s) followed by proxy data for the parent beacon. Then it continues this pattern for each child beacon until no more tasks or proxy data is available or the tasks_max_size setting will be exceeded by the next task or proxy data.
 

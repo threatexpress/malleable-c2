@@ -15,8 +15,12 @@ The following dive deeper into the understanding of Malleable C2
 
 ## Changelog
 
+### 20221022 - Updated for CS 4.7
+- Added 4.7 reference profile
+- Updated MalleableExplained.md with 4.7 considerations
+
 ### 20220421 - Updated for CS 4.6
-- Added 4.6 refernce profile
+- Added 4.6 reference profile
 - No more '1MB' limit
   - Add section "Task and Proxy Max Size" with new options
     - set tasks_max_size "1048576";
@@ -77,6 +81,7 @@ The following dive deeper into the understanding of Malleable C2
 - @joevest
 - @001SPARTaN
 - @andrewchiles
+- @Charles-Foster-Kane
 
 ## License
 
