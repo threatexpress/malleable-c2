@@ -15,6 +15,10 @@ The following dive deeper into the understanding of Malleable C2
 
 ## Changelog
 
+### 20230801 - Updated for CS 4.8
+- Added 4.8 reference profile
+- Updated MalleableExplained.md with new 4.8 options
+
 ### 20221022 - Updated for CS 4.7
 - Added 4.7 reference profile
 - Updated MalleableExplained.md with 4.7 considerations

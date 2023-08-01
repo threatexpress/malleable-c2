@@ -1,6 +1,16 @@
 Using CS in red team operations is common practice for a lot of companies offering red teaming to their clients and my mileage is no different there. Having used many products I've found the ability to craft how the C2 responds to traffic very useful, which is where malleable c2 profiles enter the conversation.
 
-One of the great and popular features of cobalt strike is the ability to create profiles  to shape and mask traffic, essentially a profile is used to tell the CS teamserver how traffic is going to look and how to respond to the data the beacon sends it.
+One of the great and popular features of cobalt strike is the ability to create profiles to shape and mask traffic, essentially a profile is used to tell the CS teamserver how traffic is going to look and how to respond to the data the beacon sends it.
+
+## 4.8 Updates and Considerations
+
+Cobalt Strike 4.8 added a profile option to modify the default syscall method used in Beacon via the `stage` block: `syscall_method`
+
+Complete details on this feature can be found at https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/post-exploitation_system-calls.htm
+
+```
+set syscall_method "None" # Valid options include None, Direct, and Indirect
+```
 
 ## 4.7 Updates and Considerations
 
