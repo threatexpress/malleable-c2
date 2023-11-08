@@ -2,6 +2,20 @@ Using CS in red team operations is common practice for a lot of companies offeri
 
 One of the great and popular features of cobalt strike is the ability to create profiles to shape and mask traffic, essentially a profile is used to tell the CS teamserver how traffic is going to look and how to respond to the data the beacon sends it.
 
+## 4.9 Updates and Considerations
+
+Cobalt Strike 4.9 adds new Malleable C2 profile options for post-ex UDRL memory cleanup when the post-ex DLL is loaded and to change the default HTTP Beacon library type used by the generated beacons.
+```
+set cleanup "true";
+set library "winhttp"; # Valid options include wininet (default), and winhttp
+```
+
+__set cleanup__
+post-ex.cleanup option cleans up the post-ex UDRL memory when the post-ex DLL is loaded. Complete details on this feature can be found at https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/malleable-c2-extend_controll-post-exploitation.htm
+
+__set library__
+.http-beacon.library allows user to specify the default library used by the generated beacons used by the profile. The library defaults to "wininet", which is the only type of beacon prior to version 4.9. The library value can be "wininet" or "winhttp". Complete details on this feature can be found at https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/malleable-c2_http-beacons.htm
+
 ## 4.8 Updates and Considerations
 
 Cobalt Strike 4.8 added a profile option to modify the default syscall method used in Beacon via the `stage` block: `syscall_method`

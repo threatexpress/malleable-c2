@@ -15,6 +15,12 @@ The following dive deeper into the understanding of Malleable C2
 
 ## Changelog
 
+### 20231017 - Updated for CS 4.9
+- Added 4.9 reference profile
+- Updated MalleableExplained.md with new 4.9 options
+  - `post-ex.cleanup`
+  - `.http-beacon.library`
+
 ### 20230801 - Updated for CS 4.8
 - Added 4.8 reference profile
 - Updated MalleableExplained.md with new 4.8 options
