@@ -16,21 +16,26 @@ The following dive deeper into the understanding of Malleable C2
 ## Changelog
 
 ### 20231017 - Updated for CS 4.9
+
 - Added 4.9 reference profile
 - Updated MalleableExplained.md with new 4.9 options
   - `post-ex.cleanup`
-  - `.http-beacon.library`
+  - `post-ex.transform-x86` and `post-ex.transform-x64`
+  - `http-beacon.library`
 
 ### 20230801 - Updated for CS 4.8
+
 - Added 4.8 reference profile
 - Updated MalleableExplained.md with new 4.8 options
   - `stage.syscall_method`
 
 ### 20221022 - Updated for CS 4.7
+
 - Added 4.7 reference profile
 - Updated MalleableExplained.md with 4.7 considerations
 
 ### 20220421 - Updated for CS 4.6
+
 - Added 4.6 reference profile
 - No more '1MB' limit
   - Add section "Task and Proxy Max Size" with new options
@@ -41,10 +46,12 @@ The following dive deeper into the understanding of Malleable C2
 - Updated MalleableExplained.md with 4.6 considerations
 
 ### 202112 - Updated for CS 4.5
+
 - Added 4.5 reference profile
 - Updated MalleableExplained.md with 4.5 considerations
 
-### 202108 - Added [MalleableExplained.md](https://github.com/threatexpress/malleable-c2/blob/master/MalleableExplained.md) 
+### 202108 - Added [MalleableExplained.md](https://github.com/threatexpress/malleable-c2/blob/master/MalleableExplained.md)
+
 - Reference from Andy Gill (@ZephrFish)
 - Reference blog: https://blog.zsec.uk/cobalt-strike-profiles/
 
@@ -74,9 +81,9 @@ The following dive deeper into the understanding of Malleable C2
     - `headers_remove`
     - `ssh_pipename`
   - **postex**
-     - `pipename`
-     - `thread_hint`
-     - `keylogger`
+    - `pipename`
+    - `thread_hint`
+    - `keylogger`
   - **stage**
     - `allocator`
     - `magic_mz_86|magic_mz_64`
@@ -97,4 +104,3 @@ The following dive deeper into the understanding of Malleable C2
 ## License
 
 This project and all individual scripts are under the GNU GPL v3.0 license.
-

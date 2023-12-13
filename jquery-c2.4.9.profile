@@ -320,7 +320,8 @@ http-stager {
 ##    keylogger         GetAsyncKeyState                        CS 4.2 - The GetAsyncKeyState option (default) uses the GetAsyncKeyState API to observe keystrokes. The SetWindowsHookEx option uses SetWindowsHookEx to observe keystrokes.
 ##    threadhint                                                CS 4.2 - allows multi-threaded post-ex DLLs to spawn threads with a spoofed start address. Specify the thread hint as "module!function+0x##" to specify the start address to spoof. The optional 0x## part is an offset added to the start address.
 ##    cleanup           false                                   CS 4.9 - Cleans up the post-ex UDRL memory when the post-ex DLL is loaded.
-
+##
+## Use the transform-x86\x64 to avoid signature detection of post-ex DLLs
 ## Guidelines
 ##    - spawnto can only be 63 chars
 ##    - OPSEC WARNING!!!! The spawnto in this example will contain identifiable command line strings
@@ -357,6 +358,17 @@ post-ex {
     set pipename "Winsock2\\CatalogChangeListener-###-0,";
     set keylogger "GetAsyncKeyState";
     #set threadhint "module!function+0x##"
+
+    # Transform post-ex DLLs to avoid signature detections. Only supports strrep and strrepex.
+    transform-x64 {
+        strrepex "PortScanner" "Scanner module is complete" "Scan is complete";
+        strrep "is alive." "is up.";
+    }
+
+    transform-x86 {
+        strrepex "PortScanner" "Scanner module is complete" "Scan is complete";
+        strrep "is alive." "is up.";
+    }
 }
 
 ################################################
@@ -745,8 +757,8 @@ http-post {
 # }
 
 ## CS 4.0 Profile Variants
-## Variants are selectable when configuring an HTTP or HTTPS Beacon listener. Variants allow each HTTP or HTTPS Beacon listener tied to a single team server to have network IOCs that differ from each other.
-## You may add profile "variants" by specifying additional http-get, http-post, http-stager, and https-certifcate blocks with the following syntax:
+## Variants are selectable when configuring an HTTP, HTTPS or DNS Beacon listener. Variants allow each HTTP, HTTPS or DNS Beacon listener tied to a single team server to have network IOCs that differ from each other.
+## You may add profile "variants" by specifying additional dns-beacon, http-beacon, http-get, http-post, http-stager, and https-certifcate blocks with the following syntax:
 ## [block name] "variant name" { ... }. Here's a variant http-get block named "My Variant":
 ## http-get "My Variant" {
 ##	client {
